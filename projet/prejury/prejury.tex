@@ -1,1 +1,57 @@
 TODO
+\ documentclass { article }
+% Calcul de la fréquence de coupure pour un circuit passe-haut via l'intersection de deux droites représentant 
+% la variation de tension de sortie en foction de la fréquence du signal entrant.
+
+\ title { Evaluation de la fréquence de coupe d'un filtre passe-haut pour une résistance de \dots et une capacité de ... }
+\ author { Groupe 11.53 }
+\ date { \today }
+
+\usepackage[french]{babel}
+\usepackage [ latin 1]{ inputenc }
+\usepackage [T1]{ fontenc }
+\usepackage { lmodern }
+
+\begin { document }
+
+\maketitle 
+
+Dans cette partie, nous allons vous expliquer comment , grâce à des données expérimentales
+obtenues durant nos laboratoires du lundi après-midi, à l'aide d'un générateur de fonction, d'un oscilloscope et,
+bien sur, un circuit R-C,résistance-capacité, servant de filtre passe bas dans cette section, nous avons calculé la 
+fréquence de coupure de notre filtre.   
+
+   A chaque fréquence que générenotre générateur de fonction correspond une tension, correspondant à celle au bornes
+   de la capacité, que nous pouvons observer sur l'oscilloscope. En dessinant le graphe de la tension $V_c$ aux bornes de 
+   a capacité, on voit que l'ensemble des points se regroupent autour d'une certaine droite d'équation \begin { equation }
+   y = m * x + p \end { equation }, où m est la pente, p l'ordonnée à l'origine et $$\ left (\ begin { array }{ cc}
+x\\
+y 
+\end{ array }\ right )$$
+est un point appartenant à la droite. Cette droite est croissante jusqu'à ce qu'elle atteigne une certaine fréquence,
+à laquelle elle se stabilise. Petite indiction pratique, nous avons mis l'axe "x" des abscisses dans un repère logarithmique
+de base 10. Cela signifie quà la place d'avoir à chaque graduation 0,1,2,3, ... Hz , nous avons $10^0$, $10^1$, $10^2$,... Hz.
+Ceci nous permet de mieux voir notre graphe car commençons par des fréquences de quelques dizaines de Hz pour monter dans les 
+fréquencez de plusieurs kHz.
+Nous calculons maintenant les inconues m et p de l'équation de notre première droite, croissante, au moyen d'un système 
+ \begin {equation} A * $\overrightarrow{x}$ = $\overrightarrow{b}$ \end {equation}, où A = $$\ left (\ begin { array }{ cc}
+log($f_1$) & 1 \\
+log($f_2$) & 1 \\
+log($f_3&) & 1 \\
+\end{ array }\ right )$$
+
+,$\overrightarrow{x}$ = $$\ left (\ begin { array } { cc} m \\ p \end { array }\ right )$$ et $\overrightarrow{b}$ = 
+
+$$\ left (\ begin {array } { cc} $V_{c1}$ \\ $V_{c2}$ \\ $V_{c3}$ \end{array }\ right )$$ .
+
+Avec données, cela devient:
+
+\begin {equation}  $$\ left (\ begin { array }{ cc} 127 & 1 \\ 191 & 1 \\ 356 & 1 \end{ array }\ right )$$ * 
+$$\ left (\ begin { array }{ cc} m \\ p \end{ array}\right )$$ = $$\ left (\ begin { array }{ cc} 0,40 \\ 0,50 \\ 0,60 \end{ array}\right )$$ 
+
+
+
+
+ 
+
+\end { document }
